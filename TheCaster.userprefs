@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Bases\BasePhysics.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Bases\BasePhysics.cs" Line="15" Column="25" />
+      <File FileName="Assets\Scripts\Bases\BaseCharacter.cs" Line="12" Column="59" />
+      <File FileName="Assets\Scripts\Bases\BaseAbility.cs" Line="5" Column="25" />
+      <File FileName="Assets\Scripts\Characters\Player.cs" Line="11" Column="1" />
+      <File FileName="Assets\Scripts\Characters\InputManager.cs" Line="13" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
