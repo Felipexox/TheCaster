@@ -10,7 +10,7 @@ public class BasePhysics : MonoBehaviour {
 		rigid = GetComponent<Rigidbody> ();
 	}
 	protected virtual void Move (Vector3 p_Direction, float p_Velocity){ 
-		Vector3 acceleration = ResultForce (p_Direction, p_Velocity);
+		Vector3 acceleration = ResultForce (p_Direction.normalized, p_Velocity);
 		Vector3 resultVelocity = VelocityController (acceleration);
 		rigid.velocity = resultVelocity;
 	}

@@ -7,9 +7,7 @@ public class BaseCharacter : BasePhysics {
 
 	protected double mana;
 
-	protected List<BaseAbility> abilities;
-
-	protected virtual void CastAbility(BaseAbility ability){ }
+    protected MagicBook magicBook;
 
 
 }
