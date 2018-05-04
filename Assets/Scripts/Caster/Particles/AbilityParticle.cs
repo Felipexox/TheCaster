@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilityParticle : MonoBehaviour {
-    private Color32 color;
+    [SerializeField]
+    private Color32 baseColor;
+    [SerializeField]
     private float speed;
-    private List<Color32> colors;
+    [SerializeField]
+    private List<Color32> baseColors = new List<Color32>();
+    [SerializeField]
     private ParticleSystem particleSystem;
 }

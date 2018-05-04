@@ -1,8 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Attribute : MonoBehaviour {
-
+[System.Serializable]
+public class Attribute {
+    [SerializeField]
     private TypeAttribute typeAttribute;
+
+    public TypeAttribute TypeAttribute
+    {
+        get
+        {
+            return typeAttribute;
+        }
+
+        set
+        {
+            typeAttribute = value;
+        }
+    }
 }
