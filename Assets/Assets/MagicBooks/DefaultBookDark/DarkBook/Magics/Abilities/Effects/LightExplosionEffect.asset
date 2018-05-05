@@ -8,9 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db2f621d4ffc5c049b217fde30c9d436, type: 3}
-  m_Name: DarkBook
+  m_Script: {fileID: 11500000, guid: 2359ca72269e1f54584e3f2ae06b3d4c, type: 3}
+  m_Name: LightExplosionEffect
   m_EditorClassIdentifier: 
-  magics:
-  - {fileID: 11400000, guid: 735ad59daafd9fd42a8a18508f51df38, type: 2}
-  - {fileID: 11400000, guid: c250b783f7b82db4ea557441e8755a82, type: 2}
+  effectControl:
+  - effect: 1
+    value: 50
+    timeDuration: 0
+    hits: 0
+    delay: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Ability", menuName = "MagicBook/New_Ability", order = 2)]
 public class AbilityScriptable : ScriptableObject {
     [SerializeField]
+    private Sprite imageMagic;
+    [SerializeField]
     private float power;
     [SerializeField]
     private float size;
@@ -77,6 +79,19 @@ public class AbilityScriptable : ScriptableObject {
         set
         {
             effect = value;
+        }
+    }
+
+    public Sprite ImageMagic
+    {
+        get
+        {
+            return imageMagic;
+        }
+
+        set
+        {
+            imageMagic = value;
         }
     }
 }

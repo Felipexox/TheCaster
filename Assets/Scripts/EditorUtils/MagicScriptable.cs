@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "Magic", menuName = "MagicBook/New_Magic", order = 1)]
 public class MagicScriptable : ScriptableObject {
+
     [SerializeField]
     private string name;
     [SerializeField]
@@ -93,4 +94,6 @@ public class MagicScriptable : ScriptableObject {
             ability = value;
         }
     }
+
+    
 }

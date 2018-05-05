@@ -3965,6 +3965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fbe8199385b2ff43b028234b5ea0fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 11400000, guid: 5707c3ccd1df16c4c91dc377d2a1f821, type: 2}
+  ownerCharacter: {fileID: 0}
+  magics: []
 --- !u!23 &2076115494
 MeshRenderer:
   m_ObjectHideFlags: 0

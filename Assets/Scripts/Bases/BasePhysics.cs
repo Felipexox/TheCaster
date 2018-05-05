@@ -9,6 +9,17 @@ public class BasePhysics : MonoBehaviour {
 	protected virtual void Awake(){
 		rigid = GetComponent<Rigidbody> ();
 	}
+    public virtual Rigidbody Rigid
+    {
+        get
+        {
+            return rigid;
+        }
+        set
+        {
+            rigid = value;
+        }
+    }
 	protected virtual void Move (Vector3 p_Direction, float p_Velocity){ 
 		Vector3 acceleration = ResultForce (p_Direction.normalized, p_Velocity);
 		Vector3 resultVelocity = VelocityController (acceleration);

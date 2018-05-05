@@ -9,14 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b93e40faba4b1444580fab727daceefa, type: 3}
-  m_Name: DarkExplosion
+  m_Name: LightExplosion
   m_EditorClassIdentifier: 
-  name: DarkExplosion
+  name: LightExplosion
   attribute:
-    typeAttribute: 1
-  description: When This Magic is actived... bla bla
+    typeAttribute: 0
+  description: When This Magic Target Some one
   words:
   - {fileID: 11400000, guid: 31ae090b65c932d4a828091e497150e1, type: 2}
   - {fileID: 11400000, guid: 7b1bca9eb06acbe42abd18a1c66ffb28, type: 2}
+  - {fileID: 11400000, guid: 31ae090b65c932d4a828091e497150e1, type: 2}
   particle: {fileID: 114218718195188990, guid: d87c12dcbb0e47d4ab71436c8ca4a8b7, type: 2}
-  ability: {fileID: 11400000, guid: b0a31d1a97aa7a64693633f78b95815d, type: 2}
+  ability: {fileID: 11400000, guid: eb9b4c263b8fd4a4c91fff2fea2301ec, type: 2}

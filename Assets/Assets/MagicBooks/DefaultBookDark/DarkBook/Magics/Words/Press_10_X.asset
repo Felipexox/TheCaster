@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Name: Press_10_X
   m_EditorClassIdentifier: 
   typeWord: 0
+  waitTime: 0
+  times: 10
+  key: 120

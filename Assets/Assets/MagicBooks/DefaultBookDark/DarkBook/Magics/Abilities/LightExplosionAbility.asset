@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7410230b460a4b3429852399c60e0c64, type: 3}
-  m_Name: DarkExplosionAbility
+  m_Name: LightExplosionAbility
   m_EditorClassIdentifier: 
-  imageMagic: {fileID: 21300000, guid: 27aedec31490ba445a5298030a364b6c, type: 3}
-  power: 10
-  size: 10
+  imageMagic: {fileID: 21300000, guid: 1af370b39af080f4dba176b5cf8af89a, type: 3}
+  power: 50
+  size: 0
   particle: {fileID: 114201163200173744, guid: 00dd0119de5b1dd47b387b85603d4779, type: 2}
-  effect: {fileID: 11400000, guid: 146519ef581cd4d4f8de6b8545851a02, type: 2}
+  effect: {fileID: 11400000, guid: 4cbabd5d6c32f1947b927c35d2c00ae8, type: 2}
   typeAbility: 0

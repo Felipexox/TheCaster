@@ -3,15 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ability : BasePhysics {
+    [SerializeField]
     private float power;
+    [SerializeField]
     private float size;
+    [SerializeField]
     private BaseCharacter target = null;
+    [SerializeField]
     private Vector3 direction = Vector3.zero;
+    [SerializeField]
     private AbilityParticle particle;
+    [SerializeField]
     private TypeAbility typeAbility;
+    [SerializeField]
     private BaseCharacter ownerCharacter;
+    [SerializeField]
     private BaseCharacter sourceCharacter;
+    [SerializeField]
     private EffectScriptable effect;
+    protected override void Awake()
+    {
+        base.Awake();
+    
+    }
     private void Update()
     {
         if(target != null)
@@ -24,7 +38,11 @@ public class Ability : BasePhysics {
         }
         else
         {
-            transform.RotateAround(ownerCharacter.transform.position, 20 * Time.deltaTime);
+            transform.RotateAround(ownerCharacter.transform.position, Vector3.up, 80 * Time.deltaTime);
+            if(Vector3.Distance(transform.position, ownerCharacter.transform.position) > 2)
+            {
+                transform.position = Vector3.Lerp(transform.position,  -(transform.position - ownerCharacter.transform.position) , Time.deltaTime * 0.5f);
+            }
         }
     }
 

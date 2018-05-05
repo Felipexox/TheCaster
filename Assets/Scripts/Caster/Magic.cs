@@ -34,8 +34,10 @@ public class Magic {
     {
         //TO DO Create Ability
         GameObject newAbility = new GameObject(ability.name);
+        newAbility.transform.parent = magicBook.OwnerCharacter.transform;
         Ability abilityComponent = newAbility.AddComponent<Ability>();
         newAbility.SetActive(false);
+        // add Ability Component to a new Magic Object
         abilityComponent.Power = ability.Power;
         abilityComponent.Size = ability.Size;
         abilityComponent.OwnerCharacter = magicBook.OwnerCharacter;
@@ -43,6 +45,16 @@ public class Magic {
         abilityComponent.TypeAbility = ability.TypeAbility;
         abilityComponent.Effect = ability.Effect;
         abilityComponent.Particle = ability.Particle;
+        abilityComponent.Rigid.useGravity = false;
+
+        // add particle Ability to a new Magic Object
+ 
+     
+        ParticleSystem particleSystem = UnityUtils.CopyComponent<ParticleSystem>(ability.Particle.ParticleSystem, newAbility);
+        ParticleSystemRenderer particleSystemRenderer = newAbility.GetComponent<ParticleSystemRenderer>();
+        particleSystemRenderer.material = new Material(Shader.Find("Particles/Additive"));
+        particleSystemRenderer.material.mainTexture = ability.ImageMagic.texture;
+        newAbility.SetActive(true);
     }
 
     public Magic(MagicScriptable magicObject, MagicBook ownerBook)

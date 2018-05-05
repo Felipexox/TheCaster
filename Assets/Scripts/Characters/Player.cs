@@ -15,6 +15,10 @@ public class Player : BaseCharacter {
         {
             magicBook.ChooseMagic(0);
         }
-	}
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            magicBook.ChooseMagic(1);
+        }
+    }
 
 }
