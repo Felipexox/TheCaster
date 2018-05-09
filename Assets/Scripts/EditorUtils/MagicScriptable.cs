@@ -11,7 +11,7 @@ public class MagicScriptable : ScriptableObject {
     [SerializeField]
     private string description;
     [SerializeField]
-    private List<WordScriptable> words = new List<WordScriptable>();
+    private List<Word> words = new List<Word>();
     [SerializeField]
     private MagicParticle particle;
     [SerializeField]
@@ -56,7 +56,7 @@ public class MagicScriptable : ScriptableObject {
         }
     }
 
-    public List<WordScriptable> Words
+    public List<Word> Words
     {
         get
         {

@@ -20,7 +20,7 @@ public class Ability : BasePhysics {
     [SerializeField]
     private BaseCharacter sourceCharacter;
     [SerializeField]
-    private EffectScriptable effect;
+    private List<Effect.EffectControl> effects = new List<Effect.EffectControl>();
     protected override void Awake()
     {
         base.Awake();
@@ -51,7 +51,7 @@ public class Ability : BasePhysics {
         // create A new effect by scriptable object to add a some target
         if(target != null)
         {
-            target.AddEffect(effect, sourceCharacter, this);
+            target.AddEffect(effects, sourceCharacter, this);
         }
     }
 
@@ -159,16 +159,16 @@ public class Ability : BasePhysics {
         }
     }
 
-    public EffectScriptable Effect
+    public List<Effect.EffectControl> Effects
     {
         get
         {
-            return effect;
+            return effects;
         }
 
         set
         {
-            effect = value;
+            effects = value;
         }
     }
 }

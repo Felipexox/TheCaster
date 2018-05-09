@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2359ca72269e1f54584e3f2ae06b3d4c, type: 3}
-  m_Name: DarkExplosionEffect
+  m_Name: Effect
   m_EditorClassIdentifier: 
   effectControl:
   - effect: 1

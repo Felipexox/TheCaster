@@ -14,11 +14,11 @@ public class BaseCharacter : BasePhysics {
     [SerializeField]
     protected MagicBook magicBook;
 
-    public void AddEffect(EffectScriptable effect, BaseCharacter sourceEffect, Ability sourceAbility)
+    public void AddEffect(List<Effect.EffectControl> effects, BaseCharacter sourceEffect, Ability sourceAbility)
     {
         // add the new component effect how run the effects and then are destroied
         Effect effectComponent = gameObject.AddComponent<Effect>();
-        effectComponent.Effects = new List<Effect.EffectControl>(effect.EffectControl);
+        effectComponent.Effects = new List<Effect.EffectControl>(effects);
         effectComponent.SourceAbility = sourceAbility;
         effectComponent.EffectTarget = this;
 

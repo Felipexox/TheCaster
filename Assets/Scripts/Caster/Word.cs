@@ -77,13 +77,6 @@ public class Word{
             complete = value;
         }
     }
-    public Word(WordScriptable wordScriptable)
-    {
-        this.typeWord = wordScriptable.TypeWord;
-        this.times = wordScriptable.Times;
-        this.key = wordScriptable.Key;
-        this.waitTime = wordScriptable.WaitTime;
-    }
     public virtual IEnumerator ReadingWord()
     {
     

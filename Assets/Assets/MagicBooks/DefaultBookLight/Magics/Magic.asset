@@ -9,22 +9,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b93e40faba4b1444580fab727daceefa, type: 3}
-  m_Name: LightExplosion
+  m_Name: Magic
   m_EditorClassIdentifier: 
-  name: LightExplosion
+  name: LightSpear
   attribute:
     typeAttribute: 0
-  description: When This Magic Target Some one
+  description: When this spear target bla bla
   words:
-  - complete: 1
-    typeWord: 0
+  - complete: 0
+    typeWord: 1
     waitTime: 0
     times: 10
     key: 120
-  - complete: 1
+  - complete: 0
     typeWord: 0
     waitTime: 0
-    times: 1
-    key: 32
+    times: 0
+    key: 0
+  - complete: 0
+    typeWord: 0
+    waitTime: 0
+    times: 0
+    key: 0
   particle: {fileID: 114218718195188990, guid: d87c12dcbb0e47d4ab71436c8ca4a8b7, type: 2}
-  ability: {fileID: 11400000, guid: eb9b4c263b8fd4a4c91fff2fea2301ec, type: 2}
+  ability: {fileID: 0}

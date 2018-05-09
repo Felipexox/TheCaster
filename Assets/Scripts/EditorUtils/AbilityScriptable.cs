@@ -12,7 +12,7 @@ public class AbilityScriptable : ScriptableObject {
     [SerializeField]
     private AbilityParticle particle;
     [SerializeField]
-    private EffectScriptable effect;
+    private List<Effect.EffectControl> effects = new List<Effect.EffectControl>();
     [SerializeField]
     private TypeAbility typeAbility;
 
@@ -69,16 +69,16 @@ public class AbilityScriptable : ScriptableObject {
         }
     }
 
-    public EffectScriptable Effect
+    public List<Effect.EffectControl> Effects
     {
         get
         {
-            return effect;
+            return effects;
         }
 
         set
         {
-            effect = value;
+            effects = value;
         }
     }
 

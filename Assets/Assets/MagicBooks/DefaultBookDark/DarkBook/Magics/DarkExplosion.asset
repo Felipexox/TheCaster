@@ -16,7 +16,15 @@ MonoBehaviour:
     typeAttribute: 1
   description: When This Magic is actived... bla bla
   words:
-  - {fileID: 11400000, guid: 31ae090b65c932d4a828091e497150e1, type: 2}
-  - {fileID: 11400000, guid: 7b1bca9eb06acbe42abd18a1c66ffb28, type: 2}
+  - complete: 0
+    typeWord: 0
+    waitTime: 0
+    times: 10
+    key: 120
+  - complete: 0
+    typeWord: 1
+    waitTime: 3
+    times: 0
+    key: 32
   particle: {fileID: 114218718195188990, guid: d87c12dcbb0e47d4ab71436c8ca4a8b7, type: 2}
   ability: {fileID: 11400000, guid: b0a31d1a97aa7a64693633f78b95815d, type: 2}

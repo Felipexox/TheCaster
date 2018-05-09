@@ -25,9 +25,11 @@ public class Magic {
         {
             yield return words[i].ReadingWord();
             complete += words[i].Complete ? 1 : 0;
+            words[i].Complete = false;
         }
         float sucessful = (complete / words.Count) * 100;
         CastMagic();
+
     }
 
     public void CastMagic()
@@ -43,7 +45,7 @@ public class Magic {
         abilityComponent.OwnerCharacter = magicBook.OwnerCharacter;
         abilityComponent.SourceCharacter = magicBook.OwnerCharacter;
         abilityComponent.TypeAbility = ability.TypeAbility;
-        abilityComponent.Effect = ability.Effect;
+        abilityComponent.Effects = ability.Effects;
         abilityComponent.Particle = ability.Particle;
         abilityComponent.Rigid.useGravity = false;
 
@@ -66,12 +68,7 @@ public class Magic {
         this.particle = magicObject.Particle;
         this.magicBook = ownerBook;
 
-        int size = magicObject.Words.Count;
-        for(int i = 0; i < size; i++)
-        {
-            Word word = new Word(magicObject.Words[i]);
-            words.Add(word);
-        }
+        this.words = new List<Word>(magicObject.Words);
     }
 
     public string Name
