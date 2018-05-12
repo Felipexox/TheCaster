@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "Magic", menuName = "MagicBook/New_Magic", order = 1)]
 public class MagicScriptable : ScriptableObject {
-
+    [Header("Magic Attributes")]
     [SerializeField]
     private string name;
     [SerializeField]
     private Attribute attribute;
     [SerializeField]
     private string description;
+    [Header("Words To Cast Magic")]
     [SerializeField]
     private List<Word> words = new List<Word>();
+    [Header("Particle Used")]
     [SerializeField]
     private MagicParticle particle;
+    [Header("Ability Area")]
     [SerializeField]
-    private AbilityScriptable ability;
+    private Ability ability;
     
     public string Name
     {
@@ -82,7 +85,7 @@ public class MagicScriptable : ScriptableObject {
         }
     }
 
-    public AbilityScriptable Ability
+    public Ability Ability
     {
         get
         {

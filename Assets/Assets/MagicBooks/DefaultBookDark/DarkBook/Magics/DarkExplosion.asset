@@ -27,4 +27,11 @@ MonoBehaviour:
     times: 0
     key: 32
   particle: {fileID: 114218718195188990, guid: d87c12dcbb0e47d4ab71436c8ca4a8b7, type: 2}
-  ability: {fileID: 11400000, guid: b0a31d1a97aa7a64693633f78b95815d, type: 2}
+  ability:
+    imageMagic: {fileID: 21300000, guid: 27aedec31490ba445a5298030a364b6c, type: 3}
+    power: 0
+    size: 0
+    particle: {fileID: 114201163200173744, guid: 00dd0119de5b1dd47b387b85603d4779,
+      type: 2}
+    effects: []
+    typeAbility: 0

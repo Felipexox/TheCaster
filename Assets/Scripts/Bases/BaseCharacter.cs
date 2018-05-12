@@ -7,14 +7,14 @@ public class BaseCharacter : BasePhysics {
 
 	protected double mana;
 
-    protected List<Ability> abilitiesCasted = new List<Ability>();
+    protected List<AbilityComponent> abilitiesCasted = new List<AbilityComponent>();
 
     protected List<Effect> effects = new List<Effect>();
 
     [SerializeField]
     protected MagicBook magicBook;
 
-    public void AddEffect(List<Effect.EffectControl> effects, BaseCharacter sourceEffect, Ability sourceAbility)
+    public void AddEffect(List<Effect.EffectControl> effects, BaseCharacter sourceEffect, AbilityComponent sourceAbility)
     {
         // add the new component effect how run the effects and then are destroied
         Effect effectComponent = gameObject.AddComponent<Effect>();

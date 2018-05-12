@@ -84,7 +84,7 @@ public class Effect : MonoBehaviour {
     }
 
     private List<EffectControl> effects = new List<EffectControl>();
-    private Ability sourceAbility;
+    private AbilityComponent sourceAbility;
     private BaseCharacter effectTarget;
     private int controller = 0;
     public IEnumerator RunEffects()
@@ -123,7 +123,7 @@ public class Effect : MonoBehaviour {
         }
     }
 
-    public Ability SourceAbility
+    public AbilityComponent SourceAbility
     {
         get
         {

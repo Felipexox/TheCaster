@@ -14,7 +14,7 @@ public class Magic {
     [SerializeField]
     private MagicParticle particle;
     [SerializeField]
-    private AbilityScriptable ability;
+    private Ability ability;
     [SerializeField]
     private MagicBook magicBook;
     public IEnumerator ReadingMagic()
@@ -34,12 +34,13 @@ public class Magic {
 
     public void CastMagic()
     {
-        //TO DO Create Ability
-        GameObject newAbility = new GameObject(ability.name);
+    
+        //TO DO Create AbilityComponent
+        GameObject newAbility = new GameObject(this.name + " ( Ability )");
         newAbility.transform.parent = magicBook.OwnerCharacter.transform;
-        Ability abilityComponent = newAbility.AddComponent<Ability>();
+        AbilityComponent abilityComponent = newAbility.AddComponent<AbilityComponent>();
         newAbility.SetActive(false);
-        // add Ability Component to a new Magic Object
+        // add AbilityComponent Component to a new Magic Object
         abilityComponent.Power = ability.Power;
         abilityComponent.Size = ability.Size;
         abilityComponent.OwnerCharacter = magicBook.OwnerCharacter;
@@ -49,7 +50,7 @@ public class Magic {
         abilityComponent.Particle = ability.Particle;
         abilityComponent.Rigid.useGravity = false;
 
-        // add particle Ability to a new Magic Object
+        // add particle AbilityComponent to a new Magic Object
  
      
         ParticleSystem particleSystem = UnityUtils.CopyComponent<ParticleSystem>(ability.Particle.ParticleSystem, newAbility);
