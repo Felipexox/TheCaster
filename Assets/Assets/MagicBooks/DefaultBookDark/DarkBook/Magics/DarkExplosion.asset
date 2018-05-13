@@ -33,5 +33,15 @@ MonoBehaviour:
     size: 0
     particle: {fileID: 114201163200173744, guid: 00dd0119de5b1dd47b387b85603d4779,
       type: 2}
-    effects: []
+    effects:
+    - effect: 0
+      value: 0
+      timeDuration: 0
+      hits: 0
+      delay: 0
+    - effect: 2
+      value: 0
+      timeDuration: 0
+      hits: 0
+      delay: 0
     typeAbility: 0

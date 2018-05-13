@@ -37,7 +37,7 @@ public class MagicEditor : EditorWindow {
 
     void DrawTabs()
     {
-        string[] options = { "Words", "Ability", "Effects" };
+        string[] options = { "Words", "Ability", "Visual Effects" };
         selected = GUILayout.Toolbar(selected, options, GUILayout.ExpandWidth(true));
         switch (selected)
         {
@@ -48,7 +48,7 @@ public class MagicEditor : EditorWindow {
                 DrawAbility();
                 break;
             case 2:
-                DrawEffects();
+                DrawVisualEffects();
                 break;
         }
     }
@@ -95,10 +95,62 @@ public class MagicEditor : EditorWindow {
     }
     void DrawAbility()
     {
-       
-    }
+        EditorGUILayout.Space();
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Icon", GUILayout.Width(50));
+        magicScriptable.Ability.ImageMagic = (Sprite)EditorGUILayout.ObjectField("",magicScriptable.Ability.ImageMagic, typeof(Sprite), allowSceneObjects: true, options:GUILayout.Width(90));
+        EditorGUILayout.BeginVertical();
 
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Power: ", GUILayout.Width(70));
+        magicScriptable.Ability.Power = EditorGUILayout.FloatField(magicScriptable.Ability.Power);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Size: ", GUILayout.Width(70));
+        magicScriptable.Ability.Size = EditorGUILayout.FloatField(magicScriptable.Ability.Size);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.EndHorizontal();
+
+        // draw effects
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+
+        DrawEffects();
+    }
     void DrawEffects()
+    {
+        for(int i = 0; i < magicScriptable.Ability.Effects.Count; i++)
+        {
+            Rect rect = EditorGUILayout.BeginVertical();
+            EditorGUILayout.Space();
+            DrawEffect(magicScriptable.Ability.Effects[i]);
+            EditorGUILayout.Space();
+            EditorGUILayout.EndVertical();
+            GUI.Box(rect, GUIContent.none);
+            EditorGUILayout.Space();
+        }
+    }
+    void DrawEffect(Effect.EffectControl effect)
+    {
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Type Effect: ", GUILayout.Width(85));
+        effect.Effect = (TypeEffect)EditorGUILayout.EnumPopup(effect.Effect, GUILayout.Width(120));
+        EditorGUILayout.EndHorizontal();
+
+        effect.TimeDuration = EditorGUILayout.FloatField("Time Duration: ", effect.TimeDuration);
+        effect.Value = EditorGUILayout.FloatField("Value: ", effect.Value);
+        effect.Hits = EditorGUILayout.IntField("Hits: ", effect.Hits);
+        effect.Delay = EditorGUILayout.FloatField("Delay: ", effect.Delay);
+    }
+    void DrawVisualEffects()
     {
         EditorGUILayout.LabelField("TO DO Effects");
     }
