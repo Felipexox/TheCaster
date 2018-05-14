@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEditor;
 public class MagicEditor : EditorWindow {
-    public MagicScriptable magicScriptable;
+    public static MagicScriptable magicScriptable;
     private float sizeX = 500, sizeY = 600;
     int selected = 0;
-    [MenuItem("Window/BookEditor")]
     public static void CreateWindow()
     {
         GetWindow<MagicEditor>("Magic Editor");
@@ -13,14 +12,24 @@ public class MagicEditor : EditorWindow {
     private void OnGUI()
     {
         minSize = new Vector2(sizeX, sizeY);
-       
-        magicScriptable = Selection.objects[0] as MagicScriptable;
+        if(Selection.objects.Length > 0 && magicScriptable == null)
+            magicScriptable = Selection.objects[0] as MagicScriptable;
         if (magicScriptable != null)
         {
             DrawMagicAttributes();
             DrawTabs();
         }
     }
+
+    private void OnInspectorUpdate()
+    {
+        Repaint();
+    }
+    private void OnSelectionChange()
+    {
+        Repaint();
+    }
+
 
     void DrawMagicAttributes()
     {
@@ -110,7 +119,7 @@ public class MagicEditor : EditorWindow {
         EditorGUILayout.Space();
         EditorGUILayout.Space();
         EditorGUILayout.Space();
-
+        
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Size: ", GUILayout.Width(70));
         magicScriptable.Ability.Size = EditorGUILayout.FloatField(magicScriptable.Ability.Size);
