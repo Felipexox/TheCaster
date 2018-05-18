@@ -5,6 +5,11 @@ public class MagicEditor : EditorWindow {
     public static MagicScriptable magicScriptable;
     private float sizeX = 500, sizeY = 600;
     int selected = 0;
+
+    private Vector2 scrollAbilityEffects;
+    private Vector2 scrollWords;
+    private Vector2 scrollVisualEffects;
+
     public static void CreateWindow()
     {
         GetWindow<MagicEditor>("Magic Editor");
@@ -63,10 +68,16 @@ public class MagicEditor : EditorWindow {
     }
     void DrawWords()
     {
+        scrollWords =  EditorGUILayout.BeginScrollView(scrollWords);
         for(int i = 0; i < magicScriptable.Words.Count; i++)
         {
+
             Rect box = EditorGUILayout.BeginVertical();
             EditorGUILayout.Space();
+            if (GUILayout.Button("x", GUILayout.Width(40)))
+            {
+                magicScriptable.Words.RemoveAt(i);
+            }
             GUIStyle labelStyle = GUI.skin.GetStyle("Label");
             labelStyle.alignment = TextAnchor.MiddleCenter;
             EditorGUILayout.LabelField("Word "+(i+1), labelStyle);
@@ -75,6 +86,13 @@ public class MagicEditor : EditorWindow {
             EditorGUILayout.Space();
             EditorGUILayout.EndVertical();
             GUI.Box(box, GUIContent.none);
+        }
+        EditorGUILayout.EndScrollView();
+        EditorGUILayout.Space();
+        if (GUILayout.Button("+"))
+        {
+            Word word = new Word();
+            magicScriptable.Words.Add(word);
         }
     }
     void DrawWord(Word word)
@@ -117,12 +135,19 @@ public class MagicEditor : EditorWindow {
 
         EditorGUILayout.Space();
         EditorGUILayout.Space();
-        EditorGUILayout.Space();
-        EditorGUILayout.Space();
+    
         
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Size: ", GUILayout.Width(70));
         magicScriptable.Ability.Size = EditorGUILayout.FloatField(magicScriptable.Ability.Size);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Particle Ability:", GUILayout.Width(120));
+        magicScriptable.Ability.Particle = (AbilityParticle)EditorGUILayout.ObjectField(magicScriptable.Ability.Particle, typeof(AbilityParticle));
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.EndHorizontal();
@@ -133,12 +158,27 @@ public class MagicEditor : EditorWindow {
         EditorGUILayout.Space();
 
         DrawEffects();
+
+        if (GUILayout.Button("+"))
+        {
+            Effect.EffectControl effect = new Effect.EffectControl();
+            magicScriptable.Ability.Effects.Add(effect);
+        }
     }
     void DrawEffects()
     {
+        scrollAbilityEffects = EditorGUILayout.BeginScrollView(scrollAbilityEffects);
         for(int i = 0; i < magicScriptable.Ability.Effects.Count; i++)
         {
             Rect rect = EditorGUILayout.BeginVertical();
+            EditorGUILayout.Space();
+            if (GUILayout.Button("x", GUILayout.Width(40)))
+            {
+                magicScriptable.Ability.Effects.RemoveAt(i);
+            
+                break;
+                
+            }
             EditorGUILayout.Space();
             DrawEffect(magicScriptable.Ability.Effects[i]);
             EditorGUILayout.Space();
@@ -146,6 +186,7 @@ public class MagicEditor : EditorWindow {
             GUI.Box(rect, GUIContent.none);
             EditorGUILayout.Space();
         }
+        EditorGUILayout.EndScrollView();
     }
     void DrawEffect(Effect.EffectControl effect)
     {
@@ -161,7 +202,7 @@ public class MagicEditor : EditorWindow {
     }
     void DrawVisualEffects()
     {
-        EditorGUILayout.LabelField("TO DO Effects");
+        magicScriptable.Particle = EditorGUILayout.ObjectField("", magicScriptable.Particle, typeof(MagicParticle)) as MagicParticle;
     }
 
 }

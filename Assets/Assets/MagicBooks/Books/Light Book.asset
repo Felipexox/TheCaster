@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2f621d4ffc5c049b217fde30c9d436, type: 3}
+  m_Name: Light Book
+  m_EditorClassIdentifier: 
+  name: Light Book
+  magics:
+  - {fileID: 11400000, guid: 8e75aca3b4d26344c807d1250a11c9ac, type: 2}
+  - {fileID: 11400000, guid: 5be49453530146e4c97575ee70b0ba70, type: 2}
